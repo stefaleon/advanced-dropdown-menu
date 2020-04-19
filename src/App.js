@@ -3,9 +3,9 @@ import React from 'react';
 const App = () => {
   return (
     <Navbar>
-      <li>child 1</li>
-      <li>child 2</li>
-      <li>child 3</li>
+      <NavItem icon='🤟' />
+      <NavItem icon='🤟' />
+      <NavItem icon='🤟' />
     </Navbar>
   );
 };
@@ -15,6 +15,16 @@ const Navbar = (props) => {
     <nav className='navbar'>
       <ul className='navbar-nav'>{props.children}</ul>
     </nav>
+  );
+};
+
+const NavItem = (props) => {
+  return (
+    <li className='nav-item'>
+      <a href='#' className='icon-button'>
+        {props.icon}
+      </a>
+    </li>
   );
 };
 
