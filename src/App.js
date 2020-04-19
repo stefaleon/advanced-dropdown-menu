@@ -15,7 +15,7 @@ const App = () => {
       <NavItem icon={<BellIcon />} />
       <NavItem icon={<MessengerIcon />} />
       <NavItem icon={<CaretIcon />}>
-        <p>dropdown 🤟</p>
+        <DropdownMenu />
       </NavItem>
     </Navbar>
   );
@@ -39,6 +39,28 @@ const NavItem = (props) => {
       </a>
       {open && props.children}
     </li>
+  );
+};
+
+const DropdownItem = (props) => {
+  return (
+    <a href='#' className='menu-item'>
+      <span className='icon-button'>{props.leftIcon}</span>
+      {props.children}
+    </a>
+  );
+};
+
+const DropdownMenu = () => {
+  return (
+    <div className='dropdown'>
+      <DropdownItem leftIcon={<CogIcon />}>
+        <h2>Menu Item 1</h2>
+      </DropdownItem>
+      <DropdownItem leftIcon={<ChevronIcon />}>
+        <h2>Menu Item 2</h2>
+      </DropdownItem>
+    </div>
   );
 };
 
